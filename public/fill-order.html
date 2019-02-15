@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="超值拼团,团购网">
+    <meta name="description" content="超值拼团,超值拼团、超值拼团、超值拼团、团购网、团购网、团购网、团购网。">
+    <meta name="author" content="lay-aui, a-ui.com">
+    <title>超值拼团--填写订单</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link type="text/css" rel="stylesheet" href="themes/css/base.css">
+    <link type="text/css" rel="stylesheet" href="themes/css/icon.css">
+    <link type="text/css" rel="stylesheet" href="themes/css/home.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+</head>
+<body>
+
+<section class="aui-flexView">
+    <header class="aui-navBar aui-navBar-fixed">
+        <a href="javascript:history.back(-1)" class="aui-navBar-item">
+            <i class="icon icon-return"></i>
+        </a>
+        <div class="aui-center">
+            <span class="aui-center-title">填写订单</span>
+        </div>
+        <a href="javascript:;" class="aui-navBar-item">
+            <i class="icon icon-sys"></i>
+        </a>
+    </header>
+    <section class="aui-scrollView">
+        <div class="aui-flex aui-flex-fill">
+            <div id="address" class="aui-flex-box">
+                <!--<h3><i class="icon icon-adds"></i> 李嘉桦 <em>185****2894</em></h3>-->
+                <!--<p>北京市海淀区中关村街道学院路43号大唐电信B座801</p>-->
+            </div>
+            <div class="aui-flex-arrow"></div>
+        </div>
+        <div class="divHeight"></div>
+        <div id="good_info" class="aui-fill-box">
+            <!--<a href="javascript:;" class="aui-flex">-->
+            <!--<div class="aui-fruit-img">-->
+            <!--<img src="themes/img/ad/ad-000.jpg" alt="">-->
+            <!--</div>-->
+            <!--<div class="aui-flex-box">-->
+            <!--<h2>新疆阿克苏冰糖心苹果10斤 新鲜当季整箱水果红富士批发顺丰包邮新鲜当季整箱水果红富士批发顺丰包邮</h2>-->
+            <!--<h3>￥19.99 <em>共1件</em></h3>-->
+            <!--<p>拼团成功则发货,拼团失败钱将退还到付款账号</p>-->
+            <!--</div>-->
+            <!--</a>-->
+        </div>
+        <div class="divHeight"></div>
+        <div class="aui-fill-region">
+            <a href="javascript:;" class="aui-flex b-line">
+                <div class="aui-flex-box">
+                    <h3>配送方式:</h3>
+                </div>
+                <div class="aui-fill-text">
+                    <p>默认快递</p>
+                </div>
+            </a>
+            <a href="javascript:;" class="aui-flex b-line">
+                <div class="aui-flex-box">
+                    <h3>发票信息:</h3>
+                </div>
+                <div class="aui-fill-text">
+                    <p>暂无发票</p>
+                </div>
+            </a>
+            <a href="javascript:;" class="aui-flex b-line">
+                <div class="aui-flex-box">
+                    <h3>商品金额:</h3>
+                </div>
+                <div class="aui-fill-text aui-fill-text-red">
+                    <p id="price"></p>
+                </div>
+            </a>
+            <a href="javascript:;" class="aui-flex">
+                <div class="aui-flex-box">
+                    <h3>运费总额:</h3>
+                </div>
+                <div class="aui-fill-text aui-fill-text-red">
+                    <p id="fare"></p>
+                </div>
+            </a>
+            <div class="divHeight"></div>
+            <a href="javascript:;" class="aui-flex aui-fill-pay b-line">
+                <div class="aui-fill-img">
+                    <img src="themes/img/icon/WeChat.png" alt="">
+                </div>
+                <div class="aui-flex-box">
+                    <h3>微信支付(推荐)</h3>
+                    <p>亿万用户的选择 更快更安全</p>
+                </div>
+                <div>
+                    <label class="cell-right">
+                        <input type="radio" value="1" name="pay" checked="">
+                        <i class="cell-radio-icon"></i>
+                    </label>
+                </div>
+            </a>
+            <a href="javascript:;" class="aui-flex aui-fill-pay">
+                <div class="aui-fill-img">
+                    <img src="themes/img/icon/Alipay.png" alt="">
+                </div>
+                <div class="aui-flex-box">
+                    <h3>支付宝支付</h3>
+                    <p>更快更安全</p>
+                </div>
+                <div>
+                    <label class="cell-right">
+                        <input type="radio" value="1" name="pay">
+                        <i class="cell-radio-icon"></i>
+                    </label>
+                </div>
+            </a>
+        </div>
+    </section>
+    <footer class="aui-footer aui-footer-fixed aui-footer-fill">
+        <div class="aui-flex">
+            <div id="pay" class="aui-flex-box">
+                <h3>需支付: <em>￥9.99</em></h3>
+            </div>
+            <div class="aui-fill-button">
+                <button>去支付 <i class="icon icon-san"></i></button>
+            </div>
+        </div>
+    </footer>
+</section>
+<script type="text/javascript" src="themes/js/jquery.min.js"></script>
+<script type="text/javascript" src="themes/js/slider.js"></script>
+<script type="text/javascript" src="themes/js/tab.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $.post('/api/v1/order/ready', {
+            'userid': GetQueryString('userid'),
+            'goodid': GetQueryString('goodid')
+        }, function (data) {
+            if (data.msg == 'ok') {
+                $('#good_info').html('<a href="javascript:;" class="aui-flex"><div class="aui-fruit-img"><img src="' + data.data.good.img + '" alt=""></div><div class="aui-flex-box"> <h2>' + data.data.good.name + '</h2><h3>￥' + data.data.good.price + '<em>共1件</em></h3><p>拼团成功则发货,拼团失败钱将退还到付款账号</p></div></a>');
+                $('#fare').html('￥' + data.data.good.fare);
+                $('#address').html('<h3><i class="icon icon-adds"></i>' + data.data.address.name + '<em>' + data.data.address.phone + '</em></h3><p>' + data.data.address.address + '</p>')
+                $('#pay').html('<h3>需支付: <em>￥' + data.data.pay + '</em></h3>');
+                $('#price').html('￥' + data.data.pay);
+            }
+        }, 'json')
+    });
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
+        var context = "";
+        if (r != null)
+            context = r[2];
+        reg = null;
+        r = null;
+        return context == null || context == "" || context == "undefined" ? "" : context;
+    }
+</script>
+</body>
+</html>

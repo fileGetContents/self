@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="超值拼团,团购网">
+    <meta name="description" content="超值拼团,超值拼团、超值拼团、超值拼团、团购网、团购网、团购网、团购网。">
+    <meta name="author" content="lay-aui, a-ui.com">
+    <title>超值拼团--添加新地址</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link type="text/css" rel="stylesheet" href="themes/css/base.css">
+    <link type="text/css" rel="stylesheet" href="themes/css/icon.css">
+    <link type="text/css" rel="stylesheet" href="themes/css/home.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+</head>
+<body>
+<section class="aui-flexView">
+    <header class="aui-navBar aui-navBar-fixed">
+        <a href="javascript:history.back(-1)" class="aui-navBar-item">
+            <i class="icon icon-return"></i>
+        </a>
+        <div class="aui-center">
+            <span class="aui-center-title">添加新地址</span>
+        </div>
+        <a href="javascript:;" class="aui-navBar-item">
+            <i class="icon icon-sys"></i>
+        </a>
+    </header>
+    <section class="aui-scrollView">
+        <div class="aui-address-box">
+            <div class="aui-address-cell-item">
+                <div class="aui-cell-name">收货人</div>
+                <div class="aui-cell-input">
+                    <input type="text" id="name" class="cell-input" placeholder="请输入您的姓名" autocomplete="off">
+                </div>
+            </div>
+            <div class="aui-address-cell-item">
+                <div class="aui-cell-name">手机号</div>
+                <div class="aui-cell-input">
+                    <input type="text" id="phone" class="cell-input" placeholder="请输入您的手机号" autocomplete="off">
+                </div>
+            </div>
+            <div class="aui-address-cell-item">
+                <div class="aui-cell-name">所在地区</div>
+                <div class="aui-cell-input cell-input-text">
+                    <input type="text" class="cell-input" readonly id="J_Address" placeholder="请选择收货地址">
+                </div>
+            </div>
+            <div class="aui-address-cell-item">
+                <div class="aui-cell-name">详细地址</div>
+                <div class="aui-cell-input">
+                    <input type="text" class="cell-input" id="address" placeholder="街道 小区或门牌号" autocomplete="off">
+                </div>
+            </div>
+            <div id="save" class="aui-add-box">
+                <button>保存收货地址</button>
+            </div>
+        </div>
+    </section>
+</section>
+<script type="text/javascript" src="themes/js/jquery.min.js"></script>
+<script type="text/javascript" src="themes/js/slider.js"></script>
+<script type="text/javascript" src="themes/js/tab.js"></script>
+<script type="text/javascript" src="themes/js/city.js"></script>
+<script type="text/javascript" src="themes/js/address.js"></script>
+<script type="text/javascript">
+    /**
+     * 默认调用
+     */
+    !function () {
+        var $target = $('#J_Address');
+
+        $target.citySelect();
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+    }();
+    /**
+     * 设置默认值
+     */
+    $(function () {
+        $('#save').click(function () {
+            var data = {
+                'name': $('#name').val(),
+                'phone': $('#phone').val(),
+                'pca': $('#J_Address').val(),
+                'address': $('#address').val()
+            };
+            $.post('/api/v1/address/add', data, function (data) {
+                if (data.msg == 'ok') {
+
+                } else {
+                    console.log(data.data);
+                }
+            }, 'json')
+        });
+    })
+</script>
+
+</body>
+</html>

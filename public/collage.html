@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="超值拼团,团购网">
+    <meta name="description" content="超值拼团,超值拼团、超值拼团、超值拼团、团购网、团购网、团购网、团购网。">
+    <meta name="author" content="lay-aui, a-ui.com">
+    <title>超值拼团--拼团列表</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link type="text/css" rel="stylesheet" href="themes/css/base.css">
+    <link type="text/css" rel="stylesheet" href="themes/css/icon.css">
+    <link type="text/css" rel="stylesheet" href="themes/css/home.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+</head>
+<body>
+
+<section class="aui-flexView">
+    <header class="aui-navBar aui-navBar-fixed">
+        <a href="javascript:;" class="aui-navBar-item">
+            <i class="icon"></i>
+        </a>
+        <div class="aui-center">
+            <span class="aui-center-title">拼团</span>
+        </div>
+        <a href="javascript:;" class="aui-navBar-item">
+            <i class="icon icon-sys"></i>
+        </a>
+    </header>
+    <section class="aui-scrollView">
+        <div class="aui-fruit-list" id="page">
+            <!--<a href="javascript:;" class="aui-flex b-line">-->
+                <!--<div class="aui-fruit-img">-->
+                    <!--<img src="themes/img/ad/ad-000.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="aui-flex-box">-->
+                    <!--<h2>新疆阿克苏冰糖心苹果10斤 新鲜当季整箱水果红富士批发顺丰包邮新鲜当季整箱水果红富士批发顺丰包邮</h2>-->
+                    <!--<h3>￥19.99 <em>3人团</em></h3>-->
+                    <!--<p>￥49.99</p>-->
+                <!--</div>-->
+                <!--<div class="aui-fruit-button">-->
+                    <!--<button>去拼团</button>-->
+                <!--</div>-->
+            <!--</a>-->
+        </div>
+    </section>
+    <footer class="aui-footer aui-footer-fixed">
+        <a href="index.html" class="aui-tabBar-item ">
+                    <span class="aui-tabBar-item-icon">
+                        <i class="icon icon-home"></i>
+                    </span>
+            <span class="aui-tabBar-item-text">首页</span>
+        </a>
+        <a href="collage.html" class="aui-tabBar-item aui-tabBar-item-active">
+                    <span class="aui-tabBar-item-icon">
+                        <i class="icon icon-collage"></i>
+                    </span>
+            <span class="aui-tabBar-item-text">拼团</span>
+        </a>
+        <a href="member.html" class="aui-tabBar-item ">
+                    <span class="aui-tabBar-item-icon">
+                        <i class="icon icon-my"></i>
+                    </span>
+            <span class="aui-tabBar-item-text">我的</span>                                                                                                                                                                                                                                   </span>
+        </a>
+    </footer>
+</section>
+
+<script type="text/javascript" src="themes/js/jquery.min.js"></script>
+<script type="text/javascript" src="themes/js/slider.js"></script>
+<script type="text/javascript" src="themes/js/tab.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var page = 1;
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '/api/v1/good/page?page=' + page,
+            success: function (data) {
+                var string = '';
+                data.data.data.map(function (value, index, array) {
+                    string += '<a href="/collage-page.html?goodid='+value.good_id+'" class="aui-flex b-line"><div class="aui-fruit-img"><img src="' + value.good_image + '" alt=""></div> <div class="aui-flex-box"> <h2>' + value.good_title + '</h2> <h3>￥' + value.good_price + ' <em>' + value.good_people + '人团</em></h3> <p>￥' + value.good_market_price + '</p> </div> <div class="aui-fruit-button"> <button>去拼团</button> </div> </a>'
+                });
+                $('#page').append(string);
+            }, error: function () {
+
+            }
+        });
+    })
+</script>
+</body>
+</html>

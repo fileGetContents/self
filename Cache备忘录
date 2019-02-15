@@ -1,0 +1,5 @@
+1、完成拼团清除【GroupController->goodById】
+2、更新商品清除【GoodController->getBaseInfo】【V1homeList】
+3、更新收默认收货地址清除 【OrderController->ready】
+4、创建成功平团记录信息  【OrderController->create】
+5、注册使用用户邮箱
