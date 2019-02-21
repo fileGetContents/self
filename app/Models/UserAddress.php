@@ -41,7 +41,6 @@ class UserAddress extends Model
      */
     public static function hidePhone($value)
     {
-        //182 8019 5336
         return substr($value, 0, 3) . '****' . substr($value, 7);
     }
 
