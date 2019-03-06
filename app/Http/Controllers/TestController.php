@@ -104,10 +104,10 @@ class TestController extends Controller
 
     public function mail()
     {
-        $time       = now()->addHour(5);
-        $good       = Goods::find(11)->toArray();
-        $good['to'] = '1946431302@qq.com';
-        SeedMail::dispatch($good)->delay($time);
+//        $time       = now()->addHour(5);
+//        $good       = Goods::find(11)->toArray();
+//        $good['to'] = '1946431302@qq.com';
+//        SeedMail::dispatch($good)->delay($time);
     }
 
 }
